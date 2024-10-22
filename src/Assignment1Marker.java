@@ -205,6 +205,7 @@ public class Assignment1Marker {
             DataInputStream instream =
                     new DataInputStream(new FileInputStream(filename));
             numNodes = instream.readInt();
+            System.out.println("numNodes:"+numNodes);
             PolyNode head = null;
             PolyNode tail = null;
 
@@ -285,6 +286,7 @@ public class Assignment1Marker {
 
         //test case #1: can add multiple nodes (tests that method can add nodes to end of list)
         if ((expPoly = readPolynomial("addNodeTC1.dat")) != null) {
+            System.out.println("expPoly is"+expPoly);
             if ((poly = createPolynomial(ADD_METHOD_TC_1_COEFFS, ADD_METHOD_TC_1_EXPONENTS,
                     ADD_METHOD_TC_1_EXP_RETVALS)) != null) {
                 if (expPoly.equals(poly)) {
@@ -309,6 +311,7 @@ public class Assignment1Marker {
 
         //test case #2: can add multiple nodes in reverse order (tests that method can add nodes to head of list)
         if ((expPoly = readPolynomial("addNodeTC2.dat")) != null) {
+            System.out.println("expPoly is"+expPoly);
             if ((poly = createPolynomial(ADD_METHOD_TC_2_COEFFS, ADD_METHOD_TC_2_EXPONENTS,
                     ADD_METHOD_TC_2_EXP_RETVALS)) != null) {
                 if (expPoly.equals(poly)) {
@@ -334,6 +337,7 @@ public class Assignment1Marker {
         //test case #3: can add multiple nodes in random order (tests that 
         //method can add nodes anywhere in list)
         if ((expPoly = readPolynomial("addNodeTC3.dat")) != null) {
+            System.out.println("expPoly is"+expPoly);
             if ((poly = createPolynomial(ADD_METHOD_TC_3_COEFFS, ADD_METHOD_TC_3_EXPONENTS,
                     ADD_METHOD_TC_3_EXP_RETVALS)) != null) {
                 if (expPoly.equals(poly)) {
@@ -357,6 +361,7 @@ public class Assignment1Marker {
             //polynomial from previous test
             if ((poly = createPolynomial(ADD_METHOD_TC_4_COEFFS, ADD_METHOD_TC_4_EXPONENTS,
                     ADD_METHOD_TC_4_EXP_RETVALS)) != null) {
+                System.out.println("expPoly is"+expPoly);
                 if (expPoly.equals(poly)) {
                     System.out.printf("expected the polynomial: %s, got: %s\n",
                             expPoly, poly);

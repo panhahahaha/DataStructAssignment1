@@ -6,8 +6,7 @@
 
    It should not be necessary to modify this class definition.
 */
-public class PolyNode
-{
+public class PolyNode {
     public int coefficient;
     public int exponent;
     public PolyNode next;
@@ -18,18 +17,26 @@ public class PolyNode
        DO NOT modify this method - the automated marking program uses it to mark
        your submission.
     */
-    public boolean equals(PolyNode node)
-    {
+    public boolean equals(PolyNode node) {
         boolean retval = false;
 
-        if (node != null)
-        {
-            if ((coefficient == node.coefficient) && (exponent == node.exponent))
-            {
+        if (node != null) {
+            if ((coefficient == node.coefficient) && (exponent == node.exponent)) {
                 retval = true;
             }
         }
 
         return retval;
     }
+
+    @Override
+    public String toString() {
+        return "____PointNode is ____" +
+                "\n属性值(coe): " + this.coefficient +
+                "\n属性值（exponent）: " + this.exponent +
+                "\n前向节点: " + (this.previous != null ? this.previous : "null") +
+                "\n后向节点: " + (this.next != null ? this.next : "null");
+    }
+
+
 }
