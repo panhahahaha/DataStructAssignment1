@@ -11,7 +11,7 @@ public class PolyNode {
     public int exponent;
     public PolyNode next;
     public PolyNode previous;
-
+    public int hashcode = this.hashCode();
 
     /* 
        DO NOT modify this method - the automated marking program uses it to mark
@@ -29,13 +29,33 @@ public class PolyNode {
         return retval;
     }
 
+    public void reboot() {
+        this.next = null;
+        this.previous = null;
+    }
+    public PolyNode(){}
+
+    public PolyNode(int coefficient, int exponent) {
+        this.coefficient = coefficient;
+        this.exponent = exponent;
+        this.previous = null;
+        this.next = null;
+    }
+    public PolyNode(int coefficient, int exponent,PolyNode next,PolyNode previous) {
+        this.coefficient = coefficient;
+        this.exponent = exponent;
+        this.previous = next;
+        this.next = previous;
+    }
+
     @Override
     public String toString() {
         return "____PointNode is ____" +
                 "\n属性值(coe): " + this.coefficient +
                 "\n属性值（exponent）: " + this.exponent +
-                "\n前向节点: " + (this.previous != null ? this.previous : "null") +
-                "\n后向节点: " + (this.next != null ? this.next : "null");
+                "\n当前节点:" + (this.hashCode()) +
+                "\n前向节点: " + (this.previous != null ? this.previous.hashCode() : "null") +
+                "\n后向节点: " + (this.next != null ? this.next.hashCode() : "null");
     }
 
 

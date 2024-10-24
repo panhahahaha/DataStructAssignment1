@@ -1027,6 +1027,8 @@ public class Assignment1Marker {
         if ((operand1 != null) && (operand2 != null) &&
                 ((expPoly = readPolynomial("subtractPolysTC3.dat")) != null)) {
             try {
+                expPoly.reduce();
+                System.out.println("expPly is" +expPoly);
                 result = ops.subtractPolys(operand1, operand2);
 
                 if (expPoly.equals(result)) {
@@ -1155,6 +1157,7 @@ public class Assignment1Marker {
         if ((operand1 != null) && (operand2 != null) &&
                 ((expPoly = readPolynomial("multiplyPolysTC3.dat")) != null)) {
             try {
+                expPoly.reduce();
                 result = ops.multiplyPolys(operand1, operand2);
 
                 if (expPoly.equals(result)) {
