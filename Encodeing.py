@@ -3,15 +3,16 @@ import struct
 
 # 给定的字节流
 
-path =  "addNodeTC4.dat"
+path = "subtractPolysTC3.dat"
 with open(path, 'rb') as file:
 
     data = file.read()
     print(len(data))
-    print("-----------data is----------\n",data)
+    print("-----------data is----------\n", data)
     byte_data = data
-    # 将字节流解析为一系列整数
-    int_list = struct.unpack('>' + 'I' * (len(byte_data) // 4), byte_data)
+
+    # 将字节流解析为有符号整数
+    int_list = struct.unpack('>' + 'i' * (len(byte_data) // 4), byte_data)
 
     # 输出解析出的整数列表
     print("Parsed Integers:", int_list)
@@ -21,6 +22,5 @@ with open(path, 'rb') as file:
     polynomial = " + ".join(f"{coef}x^{i}" for i, coef in enumerate(reversed(int_list)) if coef != 0)
 
     print("Polynomial:", polynomial)
-
 
 
